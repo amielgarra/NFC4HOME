@@ -3,16 +3,16 @@ package com.mlabs.bbm.firstandroidapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-
-import static java.util.regex.Pattern.*;
 
 /**
  * Created by amiel on 7/22/2016.
@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     EditText emailTxt;
     EditText passwordTxt;
     Button btnLogin;
-
+    TextView show;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,7 @@ public class Login extends AppCompatActivity {
         emailTxt = (EditText) findViewById(R.id.emailText);
         passwordTxt = (EditText) findViewById(R.id.passwordText);
         btnLogin = (Button) findViewById(R.id.loginButton);
+        show = (TextView) findViewById(R.id.textViewShow);
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,12 +52,42 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+        show.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent){
+                int x = motionEvent.getAction();
+                //boolean res = false;
+
+                //if(x==motionEvent.ACTION_DOWN){
+                //    passwordTxt.setTransformationMethod(null);
+                //    res = true;
+                //}
+
+                switch (x){
+                    case MotionEvent.ACTION_DOWN:
+                        passwordTxt.setTransformationMethod(null);
+                        //res = true;
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        passwordTxt.setTransformationMethod(new PasswordTransformationMethod());
+                        //res = false;
+                        break;
+                }
+
+                return true;//res;
+            }
+        });
     }
+
+
 
     @Override
     protected  void onPause(){
         super.onPause();
-        finish();
+        finish(
+
+        );
     }
 
 
