@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,14 +64,18 @@ public class Login extends AppCompatActivity {
                 //    passwordTxt.setTransformationMethod(null);
                 //    res = true;
                 //}
-
+                int cursor = passwordTxt.getSelectionStart();
                 switch (x){
                     case MotionEvent.ACTION_DOWN:
+                        Log.d("Login.java", "ACTION_DOWN");
                         passwordTxt.setTransformationMethod(null);
+                        passwordTxt.setSelection(cursor);
                         //res = true;
                         break;
                     case MotionEvent.ACTION_UP:
+                        Log.d("Login.java", "ACTION_UP");
                         passwordTxt.setTransformationMethod(new PasswordTransformationMethod());
+                        passwordTxt.setSelection(cursor);
                         //res = false;
                         break;
                 }
