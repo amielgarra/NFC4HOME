@@ -11,4 +11,12 @@
     android:background="#6BB9F0"
     tools:context="com.mlabs.bbm.firstandroidapp.MainActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On Touch"
+        android:id="@+id/ontouchbtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="62dp" />
 </RelativeLayout>

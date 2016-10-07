@@ -13,6 +13,8 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.regex.Pattern;
 
 /**
@@ -23,7 +25,7 @@ public class Login extends AppCompatActivity {
     EditText emailTxt;
     EditText passwordTxt;
     Button btnLogin;
-    TextView show;
+    TextView show, signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,24 +34,22 @@ public class Login extends AppCompatActivity {
         passwordTxt = (EditText) findViewById(R.id.passwordText);
         btnLogin = (Button) findViewById(R.id.loginButton);
         show = (TextView) findViewById(R.id.textViewShow);
+        signup = (TextView) findViewById(R.id.TvSignUp);
+
+
         btnLogin.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Pattern.compile("^\\w+@[a-zA-Z_]+?\\.[0-9a-zA-Z]{2,}$").matcher(emailTxt.getText()).matches())
-                {
-                    if (passwordTxt.length()>=8)
-                    {
-                        Intent intent = new Intent(Login.this,MainActivity.class );
-                        startActivity(intent);
-                    }
-                    else
-                    {
-                        Toast.makeText(getBaseContext(),"Password must be at least 8 characters.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else
-                {
-                    Toast.makeText(getBaseContext(),"Invalid e-mail address.", Toast.LENGTH_SHORT).show();
+                //if (Pattern.compile("^\\w+.*\\w*@[a-zA-Z_]+?\\.[0-9a-zA-Z]{2,}$").matcher(Email.getText()).matches() && Password.length() >= 8){
+                AccountRepo repo = new AccountRepo(getApplicationContext());
+                boolean res = false;
+                res = repo.validateLogin(emailTxt.getText().toString(), passwordTxt.getText().toString());
+                if (res == true) {
+                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    intent.putExtra("username", repo.getName(emailTxt.getText().toString(), passwordTxt.getText().toString()));
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getBaseContext(), "Username/Email or password is incorrect.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -83,6 +83,17 @@ public class Login extends AppCompatActivity {
                 return true;//res;
             }
         });
+
+        signup.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, SignUp.class);
+                startActivity(intent);
+            }
+            });
+
+
+
     }
 
 

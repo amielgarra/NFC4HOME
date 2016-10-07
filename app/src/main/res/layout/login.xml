@@ -33,7 +33,7 @@
         android:singleLine="true"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:hint="E-mail"
+        android:hint="Email/Username"
         android:fontFamily="sans-serif"
         android:background="@drawable/rounded_edittext"
         android:layout_above="@+id/passwordText"
@@ -83,5 +83,18 @@
         android:layout_below="@+id/passwordText"
         android:layout_alignRight="@+id/loginButton"
         android:layout_alignEnd="@+id/loginButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/TvSignUp"
+        android:textSize="20dp"
+        android:textColor="@color/abc_input_method_navigation_guard"
+        android:layout_marginBottom="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center" />
+
 
 </RelativeLayout>

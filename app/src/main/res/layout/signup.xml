@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/accent_material_dark">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/TvNewEmail"
+        android:hint="E-mail"
+        android:textSize="20dp"
+        android:layout_below="@+id/TvUName"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/TvNewPass"
+        android:hint="Password"
+        android:textSize="20dp"
+        android:layout_below="@+id/TvNewEmail"
+        android:layout_alignLeft="@+id/TvNewEmail"
+        android:layout_alignStart="@+id/TvNewEmail" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/TvConfirmNewPass"
+        android:hint="Confirm Password"
+        android:textSize="20dp"
+        android:layout_below="@+id/TvNewPass"
+        android:layout_alignLeft="@+id/TvNewPass"
+        android:layout_alignStart="@+id/TvNewPass" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Create Account "
+        android:id="@+id/BtnCreate"
+        android:background="@color/accent_material_light"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/abc_primary_text_disable_only_material_dark"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp" />
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Sign Up"
+        android:id="@+id/TvTitle"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/foreground_material_dark"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/TvLName"
+        android:hint="Last Name"
+        android:textSize="20dp"
+        android:layout_below="@+id/TvFName"
+        android:layout_alignLeft="@+id/TvNewPass" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/TvFName"
+        android:hint="First Name"
+        android:textSize="20dp"
+        android:layout_below="@+id/TvTitle"
+        android:layout_alignLeft="@+id/TvLName" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/TvUName"
+        android:hint="Username"
+        android:textSize="20dp"
+        android:layout_below="@+id/TvLName"
+        android:layout_alignLeft="@+id/TvLName"
+        android:layout_alignStart="@+id/TvLName" />
+
+</RelativeLayout>
