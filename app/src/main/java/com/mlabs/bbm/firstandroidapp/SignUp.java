@@ -6,6 +6,7 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +21,12 @@ import java.util.regex.Pattern;
  */
 public class SignUp extends AppCompatActivity implements android.view.View.OnClickListener {
 
-    TextView fname;
-    TextView lname;
-    TextView uname;
-    TextView email;
-    TextView password;
-    TextView confirmpass;
+    EditText fname;
+    EditText lname;
+    EditText uname;
+    EditText email;
+    EditText password;
+    EditText confirmpass;
     Button create;
 
     @Override
@@ -33,13 +34,15 @@ public class SignUp extends AppCompatActivity implements android.view.View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
 
-        fname = (TextView) findViewById(R.id.TvFName);
-        lname = (TextView) findViewById(R.id.TvLName);
-        uname = (TextView) findViewById(R.id.TvUName);
-        email = (TextView) findViewById(R.id.TvNewEmail);
-        password = (TextView) findViewById(R.id.TvNewPass);
-        confirmpass = (TextView) findViewById(R.id.TvConfirmNewPass);
+        fname = (EditText) findViewById(R.id.TvFName);
+        lname = (EditText) findViewById(R.id.TvLName);
+        uname = (EditText) findViewById(R.id.TvUName);
+        email = (EditText) findViewById(R.id.TvNewEmail);
+        password = (EditText) findViewById(R.id.TvNewPass);
+        confirmpass = (EditText) findViewById(R.id.TvConfirmNewPass);
         create = (Button) findViewById(R.id.BtnCreate);
+
+        fname.requestFocus();
 
         create.setOnClickListener(this);
 

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/accent_material_dark">
+    android:background="#6BB9F0">
 
     <EditText
         android:layout_width="300dp"
@@ -13,7 +13,8 @@
         android:hint="E-mail"
         android:textSize="20dp"
         android:layout_below="@+id/TvUName"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -25,7 +26,8 @@
         android:textSize="20dp"
         android:layout_below="@+id/TvNewEmail"
         android:layout_alignLeft="@+id/TvNewEmail"
-        android:layout_alignStart="@+id/TvNewEmail" />
+        android:layout_alignStart="@+id/TvNewEmail"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -37,14 +39,15 @@
         android:textSize="20dp"
         android:layout_below="@+id/TvNewPass"
         android:layout_alignLeft="@+id/TvNewPass"
-        android:layout_alignStart="@+id/TvNewPass" />
+        android:layout_alignStart="@+id/TvNewPass"
+        android:singleLine="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Create Account "
         android:id="@+id/BtnCreate"
-        android:background="@color/accent_material_light"
+        android:background="@color/colorPrimaryDark"
         android:textSize="20dp"
         android:textAlignment="center"
         android:textColor="@color/abc_primary_text_disable_only_material_dark"
@@ -70,7 +73,8 @@
         android:hint="Last Name"
         android:textSize="20dp"
         android:layout_below="@+id/TvFName"
-        android:layout_alignLeft="@+id/TvNewPass" />
+        android:layout_alignLeft="@+id/TvNewPass"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -79,7 +83,8 @@
         android:hint="First Name"
         android:textSize="20dp"
         android:layout_below="@+id/TvTitle"
-        android:layout_alignLeft="@+id/TvLName" />
+        android:layout_alignLeft="@+id/TvLName"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -89,6 +94,7 @@
         android:textSize="20dp"
         android:layout_below="@+id/TvLName"
         android:layout_alignLeft="@+id/TvLName"
-        android:layout_alignStart="@+id/TvLName" />
+        android:layout_alignStart="@+id/TvLName"
+        android:singleLine="true" />
 
 </RelativeLayout>

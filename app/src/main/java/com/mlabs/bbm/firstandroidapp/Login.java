@@ -45,6 +45,7 @@ public class Login extends AppCompatActivity {
                 boolean res = false;
                 res = repo.validateLogin(emailTxt.getText().toString(), passwordTxt.getText().toString());
                 if (res == true) {
+                    finish();
                     Intent intent = new Intent(Login.this, OnTouch.class);
                     intent.putExtra("username", repo.getName(emailTxt.getText().toString(), passwordTxt.getText().toString()));
                     startActivity(intent);
